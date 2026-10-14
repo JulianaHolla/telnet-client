@@ -48,13 +48,13 @@ public class TelnetClient {
             PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
             String line;
             while ((line = in.readLine()) != null) {
-                if (line.equals("QUIT")) {
+                if (line.equals("/QUIT")) {
                     break;
                 }
                 out.println(line);
             }
         } catch (IOException e) {
-            // ignore
+            
         } finally {
             close();
         }
